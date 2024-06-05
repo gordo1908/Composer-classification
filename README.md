@@ -10,4 +10,4 @@ The .mid files were obtained from kunstderfuge.com (https://www.kunstderfuge.com
 
 
 ## Model
-A convolutional neural network was used. The final trained model had a training accuracy of 0.9983 and a test accuracy of 0.9400.
+A convolutional neural network was used. The final trained model had a training accuracy of 0.9983 and a test accuracy of 0.9400, meaning the model correctly identifies the composer for 94\% of the samples in the test dataset.
