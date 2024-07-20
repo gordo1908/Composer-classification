@@ -1,13 +1,12 @@
 # Composer Classification
 
-This repository contains... 
+In this project, we aim to use machine intelligence to identify the composers of short musical excerpts. The types of models explored in this work could serve as musicological tools in order to identify unique stylistic characteristics of composers and authenticate works of disputed authorship.
+
 
 ## Training data and featurization
 
-The training data consists of .mid files of musical compositions. A .mid file is a representation of the musical score. Several short snippets were extracted from the .mid files. The libfmp Python package (https://github.com/meinardmueller/libfmp) was used to read the .mid files and transform them to a piano roll-like representation of the snippets. Then note activity was sampled in time to create an input feature map (2D matrix). 10 second snippets were used with a sampling rate of 100 samples per second. Visual representations of an example piano roll and input feature map are given in data/piano_roll.png and data/input_feature_map.png respectively. \
+The training data consists of MIDI (.mid) files downloaded from kunstderfuge.com (https://www.kunstderfuge.com). A MIDI file consists of a set of musical instructions that can be read by a computer, similar to how a musical score is read by a musician. 
 
-The .mid files were obtained from kunstderfuge.com (https://www.kunstderfuge.com), a classical music database of .mid files. The model was trained to identify the compositions of two composers: Johann Sebastian Bach and Claude Debussy. The training set consisted of 397 .mid files and 10 samples per file and 13 samples per file were taken from the Bach and Debussy files respectively, to produce 2262 Bach and 2230 Debussy training samples. The test set consisted of 500 Bach and 500 Debussy samples. All the test samples were obtained from musical compositions not represented in the training dataset. 
+## Objective and approach
+The objective of this work is to develop a model that can classify musical examples taken from a database of compositions by two composers, Johann Sebastian Bach and Claude Debussy. We created 2D feature representations from MIDI files and used them to train convolutional neural networks. The details of featurization, model training and evaluation are described in composer-class-notebook.ipynb.
 
-
-## Model
-A convolutional neural network was used. The final trained model had a training accuracy of 0.9983 and a test accuracy of 0.9400, meaning the model correctly identifies the composer for 94\% of the samples in the test dataset.
